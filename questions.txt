@@ -1,0 +1,218 @@
+& Which statement is true regarding minibatch data loads?
+- The opportunity for row collisions is increased
+- The Insert/Select loads the data into staging as a first step to loading
++ The FastLoad utility loads the data into staging as a first step to loading
+- Transformations are not allowed when moving from the staging table to the target table
+
+& Which two methods are available with Teradata to limit data access? (choose two.)
+- Set user's PERM space to zero
+- Restrict access via database profiles 
++ require users to access data via macros
++ require users to access data via stored procedures
+
+& What is the typical purpose of the semantic layer in an enterprise data warehouse architecture?
++ data views
+- data storage
+- data cleansing
+- data transformation
+
+& Which two statement are true about a Relational Database?
+- It is defined by primary and secondary keys
+- It is a collection of related rows and columns.
+- It is a collection of ligically related tables.
++ It is a collection of physically related tables.
++ It is a DBMS that is based on the relational model.
+
+& Which is a key capability provided by the Teradata Parallel Datavase Extension (PDE)?
+- It monitors system performance.
+- It returns answer sets to the client.
+- It performs disk space management.
++ It controls virtual processor resources.
+
+& What is a use of the Primary Index in the Teradata Database?
++ to support efficient data access
+- to provide a constraint to ensure Referential Integrity
+- to enable compression on the data to improve query performance
+- to ensure enough AMPs are involved to reduce query processing time
+
+& What is used by PEs and AMPs for internal communications?
++ the YNET
+- the BYNET
+- a proprietary LAN
+- an internode WAN
+
+& Which two reduce the likelhood of a full table scan (FTS)? (Choose two.)
+- The primary index is fully qualified.
+- The use of a WHERE clause in the query.
++ The primary index is defined as compressed.
++ A surrogate is defined on the index column.
+
+& At which three levels is locking supported on Teradata?(Choose three.)
+- User 
++ Table
+- Index
++ Database
+- Row Hash
+
+& Which component is part of Teradata's open architecture?
+- AMP
++ Node
+- BYNET
+- Operating System
+
+& What is a benefit of the Teradata Database?
+- It supports multiple, mixed data stores.
+- It allows expansion without sacrificing performance.
+- It automatically detects and recovers from software failures.
++ It can be accessed by either channel attached  or wide are network attached systems.
+
+& Which three describe the benefit of Teradata's scalability?(Choose three.)
+- It allows users to submit ad hoc queries.
+- It provides a single view of the business.
+- It provides a faul tolerant processing platform.
++ It has the ability to support multiple concurrent users.
++ Processing power can be added without needing to change the data model.
++ Disk space can be added without 
+
+& Which component is part of Teradata's open architecture?
+- PE
+- CPU
++ Node
+- BYNET
+
+& Which component is part of Teradata's open architecture?
+- AMP
++ Node
+- Disk
+- BYNET
+
+& Which three DBA functions are unnecessary, thereby contributing to the ease of management? (Choose three.)
+- create users
++ reorganize data or index space
++ format partitions or disk space
++ preallocate table or index space
+- checking database space available
+
+& Which two can be increased because of Teradata's linear scalability? (Choose two.)
++ nodes
+- memory
++ BYNET bandwidth
+- columns per table
+
+& What makes the rebuilding of indexes unnecessary with the Teradata Database?
++ Teradata AMPs
+- Teradata BYNET
+- Teradata Optimizer
+- Teradata File System
+
+& Which Teradata concept allows more than one model generation?
+- Coexistence 
++ Time sharing
+- Cohabitation
+- Node Sharing
+- Virtual Reconfiguration
+
+& Which two operating systems will run the Teradata database? (Choose two.)
++ Z/OS
+- AIX
++ Linux
+- Windows
+
+& Which two operating systems will run the Teradata database? (Choose two.)
++ TOS(Teradata Operating Systems)
+- AIX
+- Linux
++ Windows
+
+& Which two statements apply more to tactical queries than to strategic queries? (Choose two.)
++ They often involve complex joins and aggregations.
+- They are short, highlytuned, and repetitively executed.
+- They are usually ad hoc queries submitted by end users.
+- They are often used to identify business trends and patterns.
++ They are associated with clearlydefined service level expectations.
+
+& Which statement is true regarding strategic queries?
+- They usually avoid allAMP plans.
+- They normally require row hash locks.
++ They typically rely heavily on detail data.
+- They are expected to complete in realtime.
+
+& Which statement describes Online Analytical Processing (OLAP) queries?
+- Response times are known, predictable, and close to tactical.
+- Primary index retrieval is the access method most commonly used.
+- The analysis involves current day data requiring near realtime access.
++ They allow analysis on multiple dimensions such as time, product, and location.
+
+& Which statement is true regarding continuous data loads?
+- They require a higher level locking schema.
+- The table data is unavailable during data loads.
++ They work most effectively with large volumes of data.
+- The TPump utility is used to read from queues or flat files.
+
+& Which statement is true regarding minibatch data loads?
+- The opportunity for row collisions is increased.
+- The insert/select loads the data into staging as a first step to loading.
++ The FastLoad utility loads the data into staging as a first step to loading.
+- Transformations are not allowrd when moving from the staging table to the target table.
+
+& Which two can be achieved with Teradata Active System Management (TASM)?(Choose two.)
++ Limit concurrency
+- Assign the CPUs to a workload
+- Pause queries during execution
++ monitor Service Level Goals ( SLGs)
+
+& Which two can be achieved with Teradata Active System Management (TASM)? (Choose two.)
+- Pause queries
+- Monitor table locks
++ Optimize mixed workloads
++ Reject query based on table access
+
+& Which two can be achieved with Teradata Active System Management (TASM)?(Choose two.)
++ prioritize the workload
+- maintain database space
+- assign users to a profile
++ provide more consistent response times
+
+& Which two can be achieved with Teradata Active System Management (TASM)?(Choose two.)
+- add users
+- reserve database space
++ determine workload on a system
+- block access on a table to a user
+
+& What tool is available for assigning resources to users?
+- ResUsage
+- VprocManager
++ Priority Scheduler
+- Teradata Workload Analyzer
+
+& What is a function of the Teradata Workload Analyzer tool?
+- Recommends query optimization
+- Maintains workload definitions
+- Maintains mapping to rule sets
++ Recommends appropriate workload goals
+
+& Which tool is available for reviewing historical workload?
+- Teradata MDS
+- Teradata Manager
++ Teradata Administrator
+- Teradata Query Scheduler
+
+& Which tool is available to the Database Administrator (DBA) to examine the active workload?
+- Resource Usage Monitor
+- Teradata Stastics Wizard
++ Teradata Performance Monitor
+- Teradata Dynamic Workload Manager
+
+& What are three reasons to use views? ( Choose three.)
+- Views provide a materialized answer set.
+- Views return a single row at a time with each invocation
++ Views provide a mechanism to include a loching modifier.
++ Views provide security for restricting table access and updates.
++ Views can provide well defined and tested highperformance access to data.
+
+& Which three mechanisms are used to authenticate access to the Teradata Database? (Choose three.)
++ LDAP
+- views
++ passwords
+- access rights
++ Single SignOn
