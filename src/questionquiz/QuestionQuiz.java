@@ -67,8 +67,8 @@ public class QuestionQuiz {
                 Random rand = new Random();
                 for (int j = 0; j < questionsToDo; j++) {
                     int nextQuestion = rand.nextInt(questions.size() - 1);
-                    System.out.println("Question number: " + (j + 1) + " (#" + nextQuestion + ")");
                     Question currentQuestion = questions.remove(nextQuestion);
+                    System.out.println("Question number: " + (j + 1) + " (#" + currentQuestion.getQuestionNumber() + ")");
                     System.out.println(currentQuestion.getQuestion(false));
                     boolean repValid = false;
                     while (!repValid) {
@@ -97,6 +97,7 @@ public class QuestionQuiz {
                 System.out.println("Risposte errate " + wrongs.size());
 
                 for (int i = 0; i < wrongs.size(); i++) {
+                    System.out.println("Question Number #" + wrongs.get(i).getQuestion().getQuestionNumber());
                     System.out.println("Answers Given to following question:" + wrongs.get(i).getReplies());
                     System.out.println(wrongs.get(i).getQuestion().getQuestion(true));
                 }

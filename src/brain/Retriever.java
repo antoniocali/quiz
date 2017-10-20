@@ -28,7 +28,7 @@ public class Retriever {
 
     public ReturnValue<ArrayList<Question>> runRetriever() {
         ReturnValue<ArrayList<Question>> retValue = new ReturnValue<>();
-        QuestionBuilder builder = new QuestionBuilder("");
+        QuestionBuilder builder = new QuestionBuilder("", -1);
         long rowNumber = 0;
         try {
             File file = new File(path);
@@ -44,7 +44,7 @@ public class Retriever {
                     rowNumber++;
                     if (!startQuestion && currentLine.startsWith("&")) {
                         startQuestion = true;
-                        builder = new QuestionBuilder(currentLine.substring(1));
+                        builder = new QuestionBuilder(currentLine.substring(1), questions.size() + 1);
                     } else if (startQuestion && currentLine.startsWith("+")) {
                         choicesAvabile++;
                         builder = builder.addChoice(currentLine.substring(1), true);
@@ -74,7 +74,7 @@ public class Retriever {
                             System.out.println(retValueQ.getObject().getQuestion(true));
                         }
                         choicesAvabile = 0;
-                        builder = new QuestionBuilder(currentLine.substring(1));
+                        builder = new QuestionBuilder(currentLine.substring(1), questions.size() + 1);
                         startQuestion = true;
 
                     } else {

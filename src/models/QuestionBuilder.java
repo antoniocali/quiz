@@ -16,11 +16,13 @@ import utility.ReturnValue;
 public class QuestionBuilder {
 
     private String question;
+    private int questionNumber;
     private ArrayList<Reply> choices;
     private HashSet<Integer> correctAnswer = new HashSet<>();
 
-    public QuestionBuilder(String question) {
+    public QuestionBuilder(String question, int questionNumber) {
         this.question = question;
+        this.questionNumber = questionNumber;
         this.choices = new ArrayList<>();
     }
 
@@ -28,6 +30,10 @@ public class QuestionBuilder {
         return question;
     }
 
+    public int getQuestionNumber() {
+        return questionNumber;
+    }
+    
     public ArrayList<Reply> getChoices() {
         return choices;
     }
@@ -61,12 +67,14 @@ public class QuestionBuilder {
     public class Question {
 
         private String question;
+        private int questionNumber;
         private ArrayList<Reply> choices;
         private HashSet<Integer> correctAnswer;
 
         private Question(QuestionBuilder builder) {
             this.question = builder.getQuestion();
             this.choices = builder.getChoices();
+            this.questionNumber = builder.getQuestionNumber();
             this.correctAnswer = builder.getCorrectAnswer();
         }
 
@@ -76,6 +84,10 @@ public class QuestionBuilder {
                 retString += i + ". " + choices.get(i).getDesc() + (showAnswer ? " (" + choices.get(i).isCorrect() + ")" : "") + "\n";
             }
             return retString;
+        }
+
+        public int getQuestionNumber() {
+            return questionNumber;
         }
 
         public boolean isValid() {
