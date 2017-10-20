@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import models.QuestionBuilder.Question;
 import models.WrongReplies;
 import utility.ReturnValue;
@@ -39,15 +39,24 @@ public class QuestionQuiz {
             if (retValue.isSuccess()) {
                 ArrayList<Question> questions = retValue.getObject();
                 System.out.println("Questions Found(s): " + questions.size());
-                System.out.println("Questions to do:");
+                System.out.println("Insert questions to do:");
                 Scanner in = new Scanner(System.in);
+
                 long questionsToDo = 0;
                 boolean canStart = false;
                 while (!canStart) {
                     try {
                         questionsToDo = in.nextLong();
-                        if (questionsToDo < questions.size()) {
+                        if (questionsToDo <= questions.size()) {
                             canStart = true;
+                        } else {
+                            System.out.println("You inserted a Number greater than avaiable questions.");
+                            System.out.println("Set Default to max: " + questions.size());
+                            canStart = true;
+                            questionsToDo = questions.size();
+
+                            System.out.println("To reply to Questions, put all answers on one line, separated by a backspace");
+
                         }
                     } catch (Exception e) {
                         System.out.println("ERROR WITH INPUT");
@@ -94,6 +103,7 @@ public class QuestionQuiz {
 
             } else {
                 System.out.println(retValue.getMessage());
+                TimeUnit.SECONDS.sleep(5);
             }
 
         }
