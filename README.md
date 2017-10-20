@@ -7,7 +7,8 @@ At start of flow, asks you to choose a file with all questions.
 
 Syntax for Questions file:
 
-'''& Question1:
+```
+& Question1:
 + Correct answer
 - Wrong answer
 - Wrong answer
@@ -15,7 +16,8 @@ Syntax for Questions file:
 
 & Question 2:
 + true
-- false'''
+- false
+```
 
 ## Future release
 + Better code
